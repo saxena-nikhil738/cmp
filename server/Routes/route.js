@@ -14,6 +14,9 @@ import { checkAuth } from "../handler/checkAuth.js";
 const router = express.Router();
 dotenv.config();
 router.use(express.json());
+router.get("/", (req, res) => {
+  res.send("Server is running");
+});
 
 router.post("/signup", checkAuth, Signup);
 router.post("/usersignup", UserSignup);
