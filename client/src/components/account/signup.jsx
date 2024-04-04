@@ -53,7 +53,7 @@ const Signup = ({ endpoint }) => {
               className: "toast-message",
               autoClose: 2000,
             });
-            navigate("/dashboard");
+            if (res.status !== 208) navigate("/dashboard");
           })
           .catch((e) => {
             setError("Something went wrong");
@@ -91,7 +91,7 @@ const Signup = ({ endpoint }) => {
               className: "toast-message",
               autoClose: 2000,
             });
-            navigate("/userlogin");
+            if (res.status !== 208) navigate("/userlogin");
           })
           .catch((e) => {
             setError("Something went wrong");
