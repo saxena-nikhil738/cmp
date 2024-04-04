@@ -45,20 +45,18 @@ const Signup = ({ endpoint }) => {
             }
           )
           .then((res) => {
-            setError(res.data.message);
             if (!res.data.success) {
               setError(res.data.message);
-            } else {
-              toast.success("Admin registered!", {
-                position: toast.POSITION.TOP_RIGHT,
-                className: "toast-message",
-                autoClose: 2000,
-              });
-              navigate("/dashboard");
             }
+            toast.success(res.data.message, {
+              position: toast.POSITION.TOP_RIGHT,
+              className: "toast-message",
+              autoClose: 2000,
+            });
+            navigate("/dashboard");
           })
           .catch((e) => {
-            alert("Something went wrong");
+            setError("Something went wrong");
             console.log(e);
           })
           .finally(() => {
@@ -88,19 +86,15 @@ const Signup = ({ endpoint }) => {
           })
           .then((res) => {
             setError(res.data.message);
-            if (!res.data.success) {
-              setError(res.data.message);
-            } else {
-              toast.success("User registered!", {
-                position: toast.POSITION.TOP_RIGHT,
-                className: "toast-message",
-                autoClose: 2000,
-              });
-              navigate("/dashboard");
-            }
+            toast(res.data.message, {
+              position: toast.POSITION.TOP_RIGHT,
+              className: "toast-message",
+              autoClose: 2000,
+            });
+            navigate("/userlogin");
           })
           .catch((e) => {
-            alert("Something went wrong");
+            setError("Something went wrong");
             console.log(e);
           })
           .finally(() => {
