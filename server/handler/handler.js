@@ -10,7 +10,7 @@ export const UserSignup = async (req, res) => {
     // Check if the user already exists
     const existingUser = await userauth.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({
+      return res.status(208).json({
         success: false,
         message: "User already exists. Please login.",
       });
@@ -49,7 +49,7 @@ export const Signup = async (req, res) => {
     // Check if the user already exists
     const existingUser = await userauth.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({
+      return res.status(208).json({
         success: false,
         message: "User already exists. Please login.",
       });
