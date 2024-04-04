@@ -106,7 +106,7 @@ export const Sign = async (req, res) => {
           };
           res.status(200).send({ obj: obj, token: tokenT });
         } else {
-          res.status(400).send("Password incorrect");
+          res.status(203).send("Password incorrect");
         }
       } catch (error) {
         console.error("Error comparing passwords:", error);
