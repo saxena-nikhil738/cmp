@@ -149,7 +149,7 @@ const Login = ({ endpoint }) => {
             }}
           >
             {" "}
-            Forget password?
+            Forgot password?
           </div>
         </div>
         <button onClick={submit} className="create-button">
