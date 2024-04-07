@@ -7,6 +7,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import Base_URL from "../../config/Config";
 import { useLocation, useNavigate } from "react-router-dom";
+import Spinner from "react-spinner-material";
 
 const ResetPassword = () => {
   const location = useLocation();
