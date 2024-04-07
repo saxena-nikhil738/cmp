@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import * as Cookies from "es-cookie";
 import "./dash-container.css";
 import { useAuth } from "../../context/auth";
 // import { Button } from "react-bootstrap";
@@ -20,6 +20,7 @@ export default function Dashboard() {
   const email = auth.email;
   const [error, setError] = useState();
   const navigate = useNavigate();
+  const token = Cookies.get("token");
 
   const enableFlag = () => {
     setFlag(false);
@@ -34,7 +35,13 @@ export default function Dashboard() {
           email,
           old,
           newPass,
-        });
+        },
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
 
         if (res.data.message === "Password changed!") {
           setError("Password changed!");
@@ -48,6 +55,7 @@ export default function Dashboard() {
           setError("Something went wrong!");
         }
       } catch (error) {
+        setError("Something went wrong!");
         console.log(error);
       }
     }

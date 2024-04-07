@@ -7,6 +7,9 @@
     justify-content: space-evenly;
     margin: 0px 20px;
 }
+.left-content{
+    margin-top: 50px;
+}
 .right-comp{
     overflow-y: scroll;
     height: 650px;
@@ -46,6 +49,7 @@
 }
 .right-content{
     width: 75%;
+    margin-top:60px;
 }
 .search-npages{
     display: flex;
@@ -221,6 +225,9 @@
         flex-direction: column;
         margin: 5px;
     }
+    .left-content{
+    margin-top: 40px;
+}
     .left{
         display: flex;
         flex-direction: column;
@@ -228,6 +235,7 @@
     }
     .right-content{
         width: 100%;
+        margin-top:0px;
     }
     .search-npages{
         margin-top: 0px;
